@@ -1,7 +1,7 @@
 def write_to_file(data, filename):
     with open(filename, 'w') as file:
         num_char_written = file.write(data)
-        return num_char_written
+    return num_char_written
 if __name__ == "__main__":
     import os
     dir_path = os.path.dirname(os.path.realpath(__file__))
