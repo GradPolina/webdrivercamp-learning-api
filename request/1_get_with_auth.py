@@ -1,14 +1,12 @@
 import requests
 def get_with_auth(url):
-    token = "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"
+    token = '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'
     headers = {'Authorization': f'Bearer {token}'}
     response = requests.get(url, headers=headers)
     print(f"Response status code {response.status_code}")
     repos = response.json()
-    return len(repos), response.headers
-
-
-
+    num_of_repos = len(repos)
+    return num_of_repos, response.headers
 
 
 if __name__=="__main__":
