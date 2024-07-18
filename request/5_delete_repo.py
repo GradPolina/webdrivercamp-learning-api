@@ -6,5 +6,5 @@ def delete_repo(url):
     return response.json()
 if __name__=="__main__":
     url = f'https://api.github.com/repos/GradPolina/repo-created-with-api'
-    token = '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'
+    token = ''
     delete_repo(url)

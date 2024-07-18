@@ -8,6 +8,6 @@ def update_repo(url):
 
 if __name__=='__main__':
     url = 'https://api.github.com/repos/GradPolina/repo-created-with-api'
-    token = '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'
+    token = ''
     repo = update_repo(url)
     assert repo['description'] == 'I know Python Requests!'

@@ -1,8 +1,7 @@
 import requests
 def get_created_repo(url):
-    token = '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'
-    headers = {'Authorization': f'Bearer {token}'}
-    response = requests.get(url.format(owner='GradPolina', repo='repo-created-with-api'), headers=headers)
+    headers = {'Authorization': f'Bearer {token}', 'Accept': 'application/vnd.github+json'}
+    response = requests.get(url, headers=headers)
     repo = response.json()
 
     assert repo['has_wiki'] == False
@@ -15,5 +14,6 @@ def get_created_repo(url):
 
 
 if __name__=="__main__":
-    url = "https://api.github.com/repos/{owner}/{repo}"
+    url = "https://api.github.com/repos/GradPolina/repo-created-with-api"
+    token = ''
     get_created_repo(url)
