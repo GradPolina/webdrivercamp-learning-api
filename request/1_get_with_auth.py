@@ -1,8 +1,6 @@
 import requests
 def get_with_auth(url):
-    token = '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'
-    headers = {'Authorization': f'Bearer {token}'}
-    response = requests.get(url, headers=headers)
+    response = requests.get(url)
     print(f"Response status code {response.status_code}")
     repos = response.json()
     num_of_repos = len(repos)
@@ -10,7 +8,7 @@ def get_with_auth(url):
 
 
 if __name__=="__main__":
-    url = "https://api.github.com/user/repos"
+    url = 'https://api.github.com/users/GradPolina/repos'
     num_of_repos, headers = get_with_auth(url)
     print(f"Total Repos: {num_of_repos}")
     print(f"Response headers: {headers}")
